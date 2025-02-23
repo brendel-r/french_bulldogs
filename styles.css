@@ -20,14 +20,20 @@ time, mark, audio, video {
     vertical-align: baseline;
 }
 
+/* global styles*/
 :root{
   --primary-color: #FFC141;
   --secondary-color: #D9534F;
   --text-color: #333333;
-  --header-footer-bg: linear-gradient(
+  --header-bg: linear-gradient(
     rgba(255, 193, 7, 0.4), 
     rgba(255, 193, 7, 0.3), 
     rgba(255, 193, 7, 0.0) 
+);
+  --footer-bg: linear-gradient(
+    rgba(255, 193, 7, 0.0) ,
+    rgba(255, 193, 7, 0.3), 
+    rgba(255, 193, 7, 0.4) 
 );
 }
 
@@ -36,22 +42,87 @@ html {
   background: url('background.jpg');
   text-align: center;
   display: flex;
-  justify-content: center;  /* Centers content */
+  justify-content: center;  
 }
 
+/* header styles */
 header {
-  background: var(--header-footer-bg);
+  width: 95%;
+  max-width: 90%;
+  margin: 0 auto;
+  background: var(--header-bg);
   backdrop-filter: blur(5px);
   padding: 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   text-align: center;
   position: relative;
-  z-index: -1;
+  z-index: 100;
 }
 
+header h1 {
+  font-size: 4.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.header-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+flex: 1;
+}
+
+/* logo styles */
 .logo img {
-  width: 50px;
-  height: 50px;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.logo img:hover {
+  transform: rotate(360deg);
+}
+
+/* nav styles */
+nav {
+  text-align: center; 
+  margin-top: 10px; 
+}
+
+ nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 5px; 
+} 
+
+nav ul li a {
+  display: inline-block;
+  padding: 8px 15px;
+  background: var(--primary-color);
+  color: var(--text-color);
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+  background: var(--secondary-color);
+}
+
+/* footer styles */
+footer {
+  width: 95%;
+  max-width: 90%;
+  margin: 20px auto;
+  background: var(--footer-bg);
+  padding: 10px;
+  text-align: center;
 }
